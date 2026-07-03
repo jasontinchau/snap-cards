@@ -25,19 +25,3 @@ export interface Card {
   value: CardValue
   suit: CardSuit
 }
-
-export interface DeckState {
-  status: 'idle' | 'loading' | 'ready' | 'error'
-  deckId: string | null
-  cards: Card[]
-  drawnCount: number
-  valueMatches: number
-  suitMatches: number
-  error: string | null
-}
-
-export type DeckAction =
-  | { type: 'FETCH_STARTED' }
-  | { type: 'DECK_LOADED'; deckId: string; cards: Card[] }
-  | { type: 'FETCH_FAILED'; error: string }
-  | { type: 'CARD_DRAWN' }
